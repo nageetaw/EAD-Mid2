@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <title>Document</title>
 </head>
 <body>
@@ -20,38 +24,39 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <% 
-                for (let i in students){
-                %>
-                    <td><%= students[i].fullName %></td>
-                    <td>
-                        <%= students[i].email %>
-                    </td>
-                    <td>
-                        <%= students[i].phoneNumber %>
-                    </td>
-                    <td>
-                        <%= students[i].city %>
-                    </td>
-                    <td>
-                        <%= students[i].zipCode %>
-                    </td>
-                    <td>
-                       <a href="/edit/<%=students[i]_id %>"> Edit</a>
-
-                    </td>
-                    <td>
-                    <a  href="/delete/<%=students[i]_id %>"> Delete</a>
-                    </td>
-
-                <%}%>
-               
+            <% for(let index in students){ %> 
                 
-            </tr>
-            
+                <tr> <td>
+                    <img  src="/images/<%=students[index].image%>" class="rounded-circle align-self-center"
+                            width="50" height="50"/>
+                    <%=students[index].fullName%> </td>
+                
+                <td>
+                    <%=students[index].email%>
+                </td>
+                <td>
+                    <%=students[index].phoneNumber%>
+                </td>
+                <td>
+                    <%=students[index].city%>
+                </td>
+                <td>
+                    <%=students[index].zipCode%>
+                </td>
+                <td>
+                    <a href='/edit/<%=students[index]._id%>' >edit </a>
+                </td>
+                <td>
+                <a href='/delete/<%=students[index]._id%>'>Delete </a>
+                </td>
+                </tr>
+                <%} %>
+               
         </tbody>
     </table>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
