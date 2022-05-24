@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">City</th>
+                <th scope="col">Zip code</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <% 
+                for (let i in students){
+                %>
+                    <td><%= students[i].fullName %></td>
+                    <td>
+                        <%= students[i].email %>
+                    </td>
+                    <td>
+                        <%= students[i].phoneNumber %>
+                    </td>
+                    <td>
+                        <%= students[i].city %>
+                    </td>
+                    <td>
+                        <%= students[i].zipCode %>
+                    </td>
+                    <td>
+                       <a href="/edit/<%=students[i]_id %>"> Edit</a>
+
+                    </td>
+                    <td>
+                    <a  href="/delete/<%=students[i]_id %>"> Delete</a>
+                    </td>
+
+                <%}%>
+               
+                
+            </tr>
+            
+        </tbody>
+    </table>
+</body>
+</html>
